@@ -4,13 +4,12 @@
  *
  * @format
  */
-// Importing necessary items from react and react-native
+
 import React, {useState} from 'react';
 import {View, StyleSheet} from 'react-native';
-import ToDoList from './components/ToDoList'; // Adjust the path as necessary
+import ToDoList from './components/ToDoList';
 
 const App = () => {
-  // Initialize state with a list of tasks
   const [tasks, setTasks] = useState(['Do laundry', 'Go to gym', 'Walk dog']);
 
   return (

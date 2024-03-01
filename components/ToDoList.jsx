@@ -17,5 +17,4 @@ const styles = StyleSheet.create({
   listContainer: {},
   task: {},
 });
-
 export default ToDoList;
