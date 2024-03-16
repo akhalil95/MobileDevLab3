@@ -6,20 +6,24 @@
  */
 
 import React, {useState} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {StyleSheet, SafeAreaView} from 'react-native';
 import ToDoList from './components/ToDoList';
 import ToDoForm from './components/ToDoForm';
 
-const App = () => {
-  const [tasks] = useState(['Do laundry', 'Go to gym', 'Walk dog']);
+function App() {
+  const [tasks, setTasks] = useState(['Do laundry', 'Go to gym', 'Walk dog']);
+
+  const handleAddTask = task => {
+    setTasks([...tasks, task]);
+  };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ToDoList tasks={tasks} />
-      <ToDoForm />
-    </View>
+      <ToDoForm addTask={handleAddTask} />
+    </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
